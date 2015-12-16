@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   def loginValidate
   	user = User.find_by(email: params[:user][:email].downcase, password: params[:user][:password].downcase)
   	if user
-  		redirect_to home
+  		#redirect_to home
+  		flash.now[:success] = 'logged in successfully'
+  		render "login"
   	else
+  		flash.now[:danger] = 'invalid email/password combination'
   		render "login"
   	end
 
