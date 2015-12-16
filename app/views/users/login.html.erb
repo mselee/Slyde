@@ -1,5 +1,5 @@
 <h1>login</h1>
-<%= form_for(:user, url: {action: "login"}) do |f| %>
+<%= form_for(:user, url: {action: "loginValidate"}) do |f| %>
 	<%= f.text_field :email, placeholder: "Enter your Email address" %> 
 	<%= f.password_field :password, placeholder: "Password" %> 
 	<%= f.submit("Log in") %> 
