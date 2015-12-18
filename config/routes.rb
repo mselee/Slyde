@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+
   get 'users/login'
   post 'users/loginValidate'
+
+  resources :slides do
+    get 'index'
+  end
+
+  post 'comments/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

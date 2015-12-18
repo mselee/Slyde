@@ -17,4 +17,7 @@
 /tmp
 
 # Ignore sublime project save file
-/Slyde.sublime-project
+Slyde.sublime-project
+
+#ignore bugging file
+.byebug_history
