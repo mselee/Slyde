@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  resources :sessions, only: [:new, :create, :destroy]
 
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'users/login'
+  get 'login' => "sessions#new" as: "login"
+  delete 'logut' => "sessions#destroy" as: "logut"
+  
   post 'users/loginValidate'
 
   resources :slides do
