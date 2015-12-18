@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   		flash.now[:danger] = 'invalid email/password combination'
   		render "login"
   	end
-
-  		
   end
+  
 end
