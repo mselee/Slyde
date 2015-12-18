@@ -1,0 +1,4 @@
+<h3><%= @comments.count %> comments</h3>
+<hr>
+<%= render :partial => "comments/comment", :collection => @comments %>
+<%= render :partial => "comments/new" %>
