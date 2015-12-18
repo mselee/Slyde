@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+
   def login
-  	
+
   end
 
   def loginValidate
@@ -14,5 +15,10 @@ class UsersController < ApplicationController
   		render "login"
   	end
   end
-  
+
+
+def create
+   @user = User.create!(params.require(:user).permit(:name,:password,:email,:gender))
+end
+
 end
