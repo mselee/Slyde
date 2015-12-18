@@ -1,2 +1,11 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>login</h1>
+
+<% flash.each do |name,msg| %>
+	<%= content_tag :div, msg, class: name %>
+<% end %>
+
+<%= form_for(:user, url: sessions_path) do |f| %>
+	<%= f.text_field :email, required: true, placeholder: "Enter your Email address" %> 
+	<%= f.password_field :password, required: true, placeholder: "Enter your Password" %> 
+	<%= f.submit("Log in") %> 
+<% end %>
