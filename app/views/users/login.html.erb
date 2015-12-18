@@ -1,0 +1,11 @@
+<h1>login</h1>
+
+<% flash.each do |name,msg| %>
+	<%= content_tag :div, msg, class: name %>
+<% end %>
+
+<%= form_for(:user, url: {action: "loginValidate"}) do |f| %>
+	<%= f.text_field :email, required: true, placeholder: "Enter your Email address" %> 
+	<%= f.password_field :password, required: true, placeholder: "Password" %> 
+	<%= f.submit("Log in") %> 
+<% end %>
