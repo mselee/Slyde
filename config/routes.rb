@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get 'login' => "sessions#new", as: "login"
+  delete 'logut' => "sessions#destroy", as: "logut"
+
+  post 'users/loginValidate'
 
   resources :slides do
     get 'index'
@@ -8,9 +14,10 @@ Rails.application.routes.draw do
 
   get 'users/login'
   post 'users/loginValidate'
-  
+
   get 'users/new'
   post 'users/create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
