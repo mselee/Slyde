@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
 	validates :gender, presence: true
 	validates :email, presence: true, uniqueness: true
 
+	has_many :comments, dependent: :delete_all
 end
