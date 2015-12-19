@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: true
 
 	has_many :comments, dependent: :delete_all
+	has_many :documents, dependent: :delete_all
 end
