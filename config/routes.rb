@@ -4,16 +4,11 @@ Rails.application.routes.draw do
   get 'login' => "sessions#new", as: "login"
   delete 'logut' => "sessions#destroy", as: "logut"
 
-  post 'users/loginValidate'
-
   resources :slides do
     get 'index'
   end
 
   post 'comments/create'
-
-  get 'users/login'
-  post 'users/loginValidate'
 
   get 'users/new'
   post 'users/create'
