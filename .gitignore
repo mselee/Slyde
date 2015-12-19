@@ -18,6 +18,7 @@
 
 # Ignore sublime project save file
 *.sublime-project
+*.sublime-workspace
 
 #ignore bugging file
 .byebug_history
