@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'login' => "sessions#new", as: "login"
   delete 'logout' => "sessions#destroy", as: "logout"
 
-  resources :slides do
-    get 'index'
+
+  resources :documents do
+    resources :slides
   end
 
   post 'comments/create'
