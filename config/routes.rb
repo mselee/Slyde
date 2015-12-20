@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'documents/open'
-
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'login' => "sessions#new", as: "login"
