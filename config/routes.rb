@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'files/images'
+
   get 'documents/open'
   resources :sessions, only: [:new, :create, :destroy]
 
