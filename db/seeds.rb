@@ -9,6 +9,6 @@
 User.destroy_all
 
 User.create! [
-	{name: "Mo'men Adel", email: "mouemened@gmail.com", password: "1234", gender: "Male"},
-	{name: "mo2men", email: "mo2men@gmail.com", password: "1234", gender: "Male"}
+	{name: "Mo'men Adel", email: "mouemened@gmail.com", password: "1234", age: 22, gender: "Male"},
+	{name: "mo2men", email: "mo2men@gmail.com", password: "1234", age: 22, gender: "Male"}
 ]
