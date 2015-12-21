@@ -1,0 +1,5 @@
+<h3>Slide <%= params[:number] %></h3>
+<%= image_tag @slide.file_path %>
+<br>
+
+<%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>

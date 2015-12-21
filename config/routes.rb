@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   get 'login' => "sessions#new", as: "login"
   delete 'logout' => "sessions#destroy", as: "logout"
 
-  resources :slides do
-    get 'index'
-  end
 
-  post 'comments/create'
+  resources :documents do
+    resources :slides, param: :number do
+      resources :comments, :only => :create
+    end
+    resources :comments, :only => :create
+  end
 
   get 'users/new'
   post 'users/create'
