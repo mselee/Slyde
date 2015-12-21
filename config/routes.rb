@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 
 
   resources :documents do
-    resources :slides
+    resources :slides, param: :number do
+      resources :comments, :only => :create
+    end
+    resources :comments, :only => :create
   end
-
-  post 'comments/create'
 
   get 'users/new'
   post 'users/create'
