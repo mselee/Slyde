@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  def open
-  	@document = Document.find_by(params: [:id])
+  def show
+  	@document = Document.find(params[:id])
   end
 end

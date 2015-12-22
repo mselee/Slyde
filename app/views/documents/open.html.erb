@@ -1,8 +1,0 @@
-<h3><%= @document.name %></h3>
-<p><%= @document.slides.count %> slides</p>
-
-<% document.slides.each do |slide| %>
-	<img src="<%= slide.file_path %>" alt="img-thumbmail" />
-<% end %>
-
-<%= render :partial => 'comments/list', :comments => @document.comments %>
