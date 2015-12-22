@@ -1,4 +1,6 @@
 <h3>Slide <%= params[:number] %></h3>
+<%= link_to "#{@document.name}", document_path(params[:document_id])%>
+</br>
 <%= image_tag @slide.file_path %>
 <br>
 
