@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       # commentable = $1.classify.constantize.find(value)
       commentable = Document.find(params[:document_id])
     else
-      commentable = Document.find(params[:document_id]).get_slide(params[:slide_number].to_i)
+      commentable = Slide.find(params[:slide_number])
     end
     commentable.comments.create(params.require(:comment).permit(:text).merge(:user_id => @user.id))
     redirect_to :back

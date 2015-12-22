@@ -4,7 +4,9 @@ class SlidesController < ApplicationController
   # end
 
   def show
-    document = Document.find(params[:document_id])
-    @slide = document.get_slide(params[:number].to_i)
+    @slide = Slide.find_by(document_id: params[:document_id], number: params[:number])
+    @index = params[:number].to_i
+    @next_slide = Slide.exists?(document_id: params[:document_id], number: @index + 1)
+    @prev_slide = Slide.exists?(document_id: params[:document_id], number: @index - 1)
   end
 end
