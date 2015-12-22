@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222120948) do
+ActiveRecord::Schema.define(version: 20151222125854) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",             null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151222120948) do
     t.integer  "document_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "number",      null: false
   end
 
   add_index "slides", ["document_id"], name: "index_slides_on_document_id"
