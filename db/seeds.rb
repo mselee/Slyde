@@ -18,5 +18,5 @@ User.create! [
 
 user = User.create(name: "seleem", email: "seleem", password: "seleem", age: 0, gender: "Male")
 doc = Document.create(name: "doc1", file_path: "doc_path", user_id: user.id)
-Slide.create(file_path: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png", document_id: doc.id)
-Slide.create(file_path: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", document_id: doc.id)
+Slide.create(file_path: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png", number: 1, document_id: doc.id)
+Slide.create(file_path: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", number: 2, document_id: doc.id)

@@ -1,0 +1,13 @@
+<h3>Slide <%= params[:number] %></h3>
+<%= image_tag @slide.file_path %>
+<br>
+
+<% if @prev_slide %>
+    <%= link_to "prev", document_slide_path(params[:document_id], @index - 1) %>
+<% end %>
+
+<% if @next_slide %>
+    <%= link_to "next", document_slide_path(params[:document_id], @index + 1) %>
+<% end %>
+
+<%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>
