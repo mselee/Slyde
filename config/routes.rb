@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'files/images'
+
   root :to => redirect('/documents/')
+
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'login' => "sessions#new", as: "login"
