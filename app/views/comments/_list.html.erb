@@ -1,4 +1,4 @@
-<h3><%= @comments.count %> comments</h3>
+<h3><%= commentable.comments.count %> comments</h3>
 <hr>
-<%= render :partial => "comments/comment", :collection => @comments %>
-<%= render :partial => "comments/new" %>
+<%= render :partial => "comments/comment", :collection => commentable.comments %>
+<%= render :partial => "comments/new" , locals: { :commentable => commentable } %>

@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
+  skip_before_action :ensure_login, only: [:new, :create]
+
   def new
   	#renders new.html.erb
   end
 
   def create
 
-  	user = User.find_by(email: params[:user][:email].downcase)
-  	if user && user.authenticate(params[:user][:password])
+  	user = User.find_by(email: params.require(:user).permit(:email)[:email].downcase)
+  	if user && user.authenticate(params.require(:user).permit(:password)[:password])
   		session[:user_id] = user.id
   		#redirect_to home
   	else
