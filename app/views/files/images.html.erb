@@ -1,5 +1,5 @@
 <h1>Sheet01</h1>
-<%reader = PDF::Reader.new("/home/cse2017/task2/public/sheet01/Sheet01.pdf")%>
+<%reader = PDF::Reader.new("public/sheet01/Sheet01.pdf")%>
 <%count=reader.page_count%>
 <% for i in 0..count-1 %>
 <img src="http://localhost:3000/sheet01/Sheet01.pdf<%= i %>.jpg" width="500" height="400">
