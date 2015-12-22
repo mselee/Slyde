@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'documents/open'
+  root :to => redirect('/documents/')
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'login' => "sessions#new", as: "login"
   delete 'logout' => "sessions#destroy", as: "logout"
 
 
-  resources :documents do
-    resources :slides, param: :number do
+  resources :documents, :only => [:show, :index] do
+    resources :slides, :only => [:show], param: :number do
       resources :comments, :only => :create
     end
     resources :comments, :only => :create
