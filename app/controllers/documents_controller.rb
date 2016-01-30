@@ -12,15 +12,15 @@ class DocumentsController < ApplicationController
   def show
   	@document = Document.find(params[:id])
   end
-  
+
   # to upload new file
   def create
-    @document = Document.new(document_params)
-    @document.file_path = params[:file]
+    @document = Document.new(params.require(:document).permit(:file_path).merge(:user_id => current_user.id))
+    @document.name = @document.file_path.file.filename
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
-        
+
       else
         format.html { render :new }
       end
@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:file_path)
+      params.require(:document).permit(:file_path, :filename, :user_id, :name)
     end
 
 end
