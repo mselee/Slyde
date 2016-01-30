@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'carrierwave'
 gem 'pdf-reader'
 gem 'rmagick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

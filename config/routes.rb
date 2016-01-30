@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout' => "sessions#destroy", as: "logout"
 
 
-  resources :documents, :only => [:show, :index] do
+  resources :documents, :only => [:show, :index, :new, :create, :destroy] do
     resources :slides, :only => [:show], param: :number do
       resources :comments, :only => :create
     end
