@@ -9,9 +9,8 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
+    <%= f.select :gender, [['Male','Male'],['Female','Female']]%>
+    </div>
   <div class="field">
     <%= f.label :age %><br>
     <%= f.text_field :age %>
