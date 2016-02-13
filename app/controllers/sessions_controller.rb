@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params.require(:user).permit(:email)[:email].downcase)
   	if user && user.authenticate(params.require(:user).permit(:password)[:password])
   		session[:user_id] = user.id
-  		#redirect_to home
+  		redirect_to root_path
   	else
   		flash[:alert] = "invalid email/password combination"
   		redirect_to login_path
