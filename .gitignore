@@ -20,5 +20,8 @@
 *.sublime-project
 *.sublime-workspace
 
-#ignore bugging file
+# ignore bugging file
 .byebug_history
+
+# ignore uploads
+/public/uploads/*
