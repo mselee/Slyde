@@ -1,9 +1,10 @@
 <h3><%= @documents.count%> Documents</h3>
-<% @documents.each do |document|%>
-	<div>
-		<h3><%= document.name %></h3>
-		<%= link_to image_tag(document.slides.first.file_path), document_path(document.id) %>
-	</div>  
-
-<%end%>
-
+<div class="card-container">
+	<% @documents.each do |document|%>
+		<div class="card" style="background-image: url(<%= document.slides.first.file_path %>)">
+				<a href="<%= document_path(document.id) %>">
+					<div><%= document.name %></div>
+				</a>
+		</div>
+	<%end%>
+</div>
