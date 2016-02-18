@@ -20,7 +20,24 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        reader = PDF::Reader.new("public/uploads/#{@document.id}/#{@document.name}")
+        count=reader.page_count
+        pdf_file_name = "public/uploads/#{@document.id}/#{@document.name}"
+        im = Magick::Image.read(pdf_file_name)
 
+            for i in 0..count-1
+              im[i].write(pdf_file_name+"#{i}"+ ".jpg")
+              im[i].change_geometry!("160x160") { |cols, rows, img|
+              im[i] = img.resize(cols, rows)
+              
+              }
+              Dir.mkdir("public/uploads/#{@document.id}/thumbnails")unless File.exists?("public/uploads/#{@document.id}/thumbnails")  
+              im[i].write("public/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg")    
+              @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i,:file_path=>"public/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg"))
+  
+            
+
+            end
       else
         format.html { render :new }
       end
