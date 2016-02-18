@@ -16,7 +16,7 @@ class LikesController < ApplicationController
 
   def destroy
   	user = current_user
-  	like = Like.find(:user_id => user.id)
+  	like = Like.find_by(:user_id => user.id)
   	like.destroy if like
   	redirect_to :back
   end
