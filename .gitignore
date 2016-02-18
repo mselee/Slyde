@@ -24,4 +24,7 @@
 .byebug_history
 
 # ignore uploads
-/public/uploads/*
+/public/*
+ 
+#ignore Gemfile.lock
+Gemfile.lock
