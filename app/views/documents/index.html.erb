@@ -1,9 +1,6 @@
-<h3><%= @documents.count%> Documents</h3>
-<% @documents.each do |document|%>
-	<div>
-		<h3><%= document.name %></h3>
-		<%= link_to image_tag(document.slides.first.file_path), document_path(document.id) %>
-	</div>  
-
-<%end%>
-
+<div class="title"><%= @documents.count %> Documents</div>
+<div class="card-container">
+	<% @documents.each do |document|%>
+		<%= render :partial => "partials/card" , locals: { :background => document.slides.first.file_path, :url =>  document_path(document.id), :title =>  document.name} %>
+	<%end%>
+</div>

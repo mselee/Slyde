@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if logged_in? %>
-	<div style="float: right">
-		Logged in as <%= current_user.name %> | 
-		<%= link_to "Logout", logout_path, method: :delete %>
- 	</div>
-<% end %>
 
+<div class="header">
+  <%= link_to "Home", documents_path %>
+    <% if logged_in? %>
+        <div style="float:right">
+          <span>Logged in as <%= current_user.name %></span>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        </div>
+    <% end %>
+</div>
 <%= yield %>
 
 </body>
