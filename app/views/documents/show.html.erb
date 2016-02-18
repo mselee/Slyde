@@ -2,11 +2,7 @@
 
 <div class="card-container">
 	<% @document.slides.each_with_index do |slide, index| %>
-	<div class="card" style="background-image: url(<%= slide.file_path %>)">
-		<a href="<%= document_slide_path(@document.id, index + 1) %>">
-			<div><%= index + 1 %></div>
-		</a>
-	</div>
+		<%= render :partial => "partials/card" , locals: { :background => slide.file_path, :url =>  document_slide_path(@document.id, index + 1), :title =>  index + 1 } %>
 	<% end %>
 </div>
 
