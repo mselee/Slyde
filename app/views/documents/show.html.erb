@@ -1,8 +1,13 @@
-<h3><%= @document.name %></h3>
-<p><%= @document.slides.count %> slides</p>
+<div class="title"><%= @document.name %> - <%= @document.slides.count %>  Slides</div>
 
-<% @document.slides.each_with_index do |slide, index| %>
-	<%= link_to image_tag(slide.file_path), document_slide_path(@document.id, index + 1) %>
-<% end %>
+<div class="card-container">
+	<% @document.slides.each_with_index do |slide, index| %>
+	<div class="card" style="background-image: url(<%= slide.file_path %>)">
+		<a href="<%= document_slide_path(@document.id, index + 1) %>">
+			<div><%= index + 1 %></div>
+		</a>
+	</div>
+	<% end %>
+</div>
 
 <%= render :partial => 'comments/list', :locals => { :commentable => @document } %>

@@ -1,4 +1,4 @@
-<h3><%= @documents.count%> Documents</h3>
+<div class="title"><%= @documents.count %> Documents</div>
 <div class="card-container">
 	<% @documents.each do |document|%>
 		<div class="card" style="background-image: url(<%= document.slides.first.file_path %>)">
