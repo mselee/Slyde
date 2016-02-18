@@ -11,6 +11,7 @@ class DocumentsController < ApplicationController
 
   def show
   	@document = Document.find(params[:id])
+    @isLiked = !(Like.find_by(user_id: current_user.id, likable_id: @document.id))
   end
 
   # to upload new file

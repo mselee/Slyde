@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
 	has_many :comments, dependent: :delete_all
 	has_many :documents, dependent: :delete_all
+	has_many :likes, dependent: :delete_all
 end
