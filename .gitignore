@@ -24,4 +24,4 @@
 .byebug_history
 
 # ignore uploads
-/public/uploads/*
+/public/*
