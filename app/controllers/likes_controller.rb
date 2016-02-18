@@ -7,7 +7,10 @@ class LikesController < ApplicationController
     else
       @likable = Slide.find(params[:slide_number])
     end
-  	 like = Like.create(:user => current_user, likable: @likable )
+    unless Like.find_by(user_id: current_user.id)
+      like = Like.create(:user => current_user, likable: @likable )
+    end
+  	 
     redirect_to :back
   end
 
