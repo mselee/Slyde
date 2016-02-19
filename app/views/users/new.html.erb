@@ -2,20 +2,20 @@
   <h2> Join Slyde </h2>
   <%= form_for :user, :url => users_create_path do |f| %>
     <div>
-      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Enter Your Name" %>
+      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Enter Your Full Name" %>
     </div>
     <div>
       <%= f.text_field :email, class: "textbox", required: true, placeholder: "Enter Your Email" %>
     </div>
     <div>
-      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Set Your Password" %>
+      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Create Your Password" %>
     </div>
     <div class="radiobutton">
       <span><%= f.radio_button :gender, 'Male' ,required: true%> Male</span>
       <span><%= f.radio_button :gender, 'Female' %> Female</span>
     </div>
     <div class="numericbox">
-      <%= f.number_field :age, in: 1..100, step: 1 ,placeholder: "Age", required: true%>
+      <%= f.number_field :age, in: 1..100, step: 1 ,placeholder: "Enter Your Age", required: true%>
     </div>
     <br>
     <div class="submit">

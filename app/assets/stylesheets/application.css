@@ -22,9 +22,15 @@ body {
   padding: 0;
 }
 .header {
-  background: #FF8D00;
-  padding: 1em 0.5em;
-  color: #fff;
+    padding: 1em 0.5em;
+    color: #fff;
+    border-bottom: 5px #411606;
+    border-bottom-style: double;
+    
+    background: linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
+    background: -o-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
+    background: -moz-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
+    background: -webkit-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
 }
 .header a {
   color: inherit;
