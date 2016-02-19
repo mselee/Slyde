@@ -1,8 +1,7 @@
 <h3>Slide <%= params[:number] %></h3>
-<p><%= @isliked %></p>
 <%= link_to "#{@document.name}", document_path(params[:document_id])%>
 </br>
-<%= image_tag @slide.file_path %>
+<%= image_tag "/uploads/#{@document.id}/#{@slide.file_path}" %>
 <br>
 
 <% if @prev_slide %>
