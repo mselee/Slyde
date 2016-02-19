@@ -1,25 +1,25 @@
-<h1> sign-up </h1>
-<%= form_for :user, :url => users_create_path do |f| %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.select :gender, [['Male','Male'],['Female','Female']]%>
+<div class="signup-container">
+  <h2> Join Slyde </h2>
+  <%= form_for :user, :url => users_create_path do |f| %>
+    <div>
+      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Enter Your Name" %>
     </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.text_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "send" %>
-  </div>
-<% end %>
+    <div>
+      <%= f.text_field :email, class: "textbox", required: true, placeholder: "Enter Your Email" %>
+    </div>
+    <div>
+      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Set Your Password" %>
+    </div>
+    <div class="radiobutton">
+      <span><%= f.radio_button :gender, 'Male' ,required: true%> Male</span>
+      <span><%= f.radio_button :gender, 'Female' %> Female</span>
+    </div>
+    <div class="numericbox">
+      <%= f.number_field :age, in: 1..100, step: 1 ,placeholder: "Age", required: true%>
+    </div>
+    <br>
+    <div class="submit">
+      <%= f.submit "Sign Up for Slyde" %>
+    </div>
+  <% end %>
+</div>

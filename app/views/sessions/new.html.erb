@@ -4,8 +4,3 @@
 	<%= content_tag :div, msg, class: name %>
 <% end %>
 
-<%= form_for(:user, url: sessions_path) do |f| %>
-	<%= f.text_field :email, required: true, placeholder: "Enter your Email address" %> 
-	<%= f.password_field :password, required: true, placeholder: "Enter your Password" %> 
-	<%= f.submit("Log in") %> 
-<% end %>

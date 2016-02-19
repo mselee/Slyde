@@ -11,12 +11,18 @@
 
 <div class="header">
   <%= link_to "Home", documents_path %>
+  <div style="float:right">
     <% if logged_in? %>
-        <div style="float:right">
           <span>Logged in as <%= current_user.name %></span>
           <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
+    <% else %>
+        <%= form_for(:user, url: sessions_path) do |f| %>
+          <span><%= f.text_field :email, required: true, placeholder: "Enter your Email address" %></span>
+          <span><%= f.password_field :password, required: true, placeholder: "Enter your Password" %></span>
+          <%= f.submit("Log in") %>
+        <% end %>
     <% end %>
+  </div>
 </div>
 <%= yield %>
 
