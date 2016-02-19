@@ -23,17 +23,18 @@ class DocumentsController < ApplicationController
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
         reader = PDF::Reader.new("public/uploads/#{@document.id}/#{@document.name}")
         count=reader.page_count
-        pdf_file_name = "public/uploads/#{@document.id}/#{@document.name}"
-        im = Magick::Image.read(pdf_file_name)
+        document_path = "public/uploads/#{@document.id}/#{@document.name}"
+        document_name = File.basename(document_path,File.extname(document_path))
+        im = Magick::Image.read("public/uploads/#{@document.id}/#{@document.name}")
 
-            for i in 0..count-1
-              im[i].write(pdf_file_name+"#{i}"+ ".jpg")
-              im[i] = im[i].thumbnail(240,240)
+            for i in 1..count
+              im[i-1].write("public/uploads/#{@document.id}/#{document_name}"+"_#{i}"+ ".jpg")
+              im[i-1] = im[i-1].thumbnail(240,240)
               
 
               Dir.mkdir("public/uploads/#{@document.id}/thumbnails")unless File.exists?("public/uploads/#{@document.id}/thumbnails")  
-              im[i].write("public/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg")    
-              @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i,:file_path=>"/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg"))
+              im[i-1].write("public/uploads/#{@document.id}/thumbnails/#{document_name}_"+"#{i}"+".jpg")    
+              @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i,:file_path=>"#{document_name}_"+"#{i}"+".jpg"))
 
             end
       else
