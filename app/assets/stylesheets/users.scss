@@ -1,3 +1,73 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: url(signup_background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.signup-container {
+    position: relative;
+    top: 11em;
+    left: 40em;
+
+    font-size: 18px;
+
+	padding: 1em;
+    width: 25em;
+    height: 15em;
+
+    //background-color: rgba(0, 0, 0, 0.25);
+    //border-width: 0.3em;
+    //border-style: double;
+    border-radius: 1.3em;
+}
+
+.signup-container .textbox{
+	position: relative;
+	font-size: 18px;
+	width: 370px;
+	padding: 10px;
+	margin: 0.7em;
+	border: 1px solid #C5C5C5;
+	border-radius: 5px;
+}
+
+.signup-container .radiobutton {
+	display: flex;
+	padding: 10px;
+	float: left;
+	width: 40%;
+}
+
+.signup-container .numericbox {
+	display: flex;
+    float: right;
+    margin-right: 1.7em;
+    width: 45%;
+}
+
+.signup-container .numericbox input {
+	font-size: 18px;
+	padding: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit input {
+	position: relative;
+    font-size: 18px;
+    color: #fff;
+    width: 370px;
+    padding: 10px;
+    margin: 0.7em;
+    background-color: #EF7E38;
+    border: 1px #EF7E38;
+    border-radius: 5px;
+}

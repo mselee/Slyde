@@ -27,16 +27,13 @@ class DocumentsController < ApplicationController
         im = Magick::Image.read(pdf_file_name)
 
             for i in 0..count-1
-              im[i].write(pdf_file_name+"#{i+1}"+ ".jpg")
-              im[i].change_geometry!("160x160") { |cols, rows, img|
-              im[i] = img.resize(cols, rows)
+              im[i].write(pdf_file_name+"#{i}"+ ".jpg")
+              im[i] = im[i].thumbnail(240,240)
+              
 
-              }
-              Dir.mkdir("public/uploads/#{@document.id}/thumbnails") unless File.exists?("public/uploads/#{@document.id}/thumbnails")
-              im[i].write("public/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i+1}"+".jpg")
-              @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i + 1,:file_path=>"/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i+1}"+".jpg"))
-
-
+              Dir.mkdir("public/uploads/#{@document.id}/thumbnails")unless File.exists?("public/uploads/#{@document.id}/thumbnails")  
+              im[i].write("public/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg")    
+              @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i,:file_path=>"/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg"))
 
             end
       else

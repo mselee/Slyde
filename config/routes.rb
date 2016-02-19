@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get 'files/images'
 
-  root :to => redirect('/documents/')
+  root :to => 'users#new'
+  
 
   resources :sessions, only: [:new, :create, :destroy]
 
