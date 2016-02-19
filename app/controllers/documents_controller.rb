@@ -11,6 +11,7 @@ class DocumentsController < ApplicationController
 
   def show
   	@document = Document.find(params[:id])
+    @isLiked = !(Like.find_by(user_id: current_user.id, likable_id: @document.id))
   end
 
   # to upload new file
@@ -33,8 +34,6 @@ class DocumentsController < ApplicationController
               Dir.mkdir("public/uploads/#{@document.id}/thumbnails")unless File.exists?("public/uploads/#{@document.id}/thumbnails")  
               im[i].write("public/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg")    
               @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i,:file_path=>"/uploads/#{@document.id}/thumbnails/#{@document.name}"+"#{i}"+".jpg"))
-  
-            
 
             end
       else

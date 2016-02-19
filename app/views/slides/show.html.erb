@@ -1,4 +1,5 @@
 <h3>Slide <%= params[:number] %></h3>
+<p><%= @isliked %></p>
 <%= link_to "#{@document.name}", document_path(params[:document_id])%>
 </br>
 <%= image_tag @slide.file_path %>
@@ -13,3 +14,4 @@
 <% end %>
 
 <%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>
+<%= render :partial => 'likes/list', :locals => { :likable => @slide } %>

@@ -1,0 +1,5 @@
+<h3><%= likable.likes.count %>likes</h3>
+<hr>
+<%= render :partial => "likes/new" , locals: { :likable => likable } %>
+
+<%# render :partial => "likes/like", :collection => @likes %>

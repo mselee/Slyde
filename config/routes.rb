@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  delete 'likes/destroy'  => "likes#destroy"
+
   get 'files/images'
 
   root :to => 'users#new'
@@ -13,8 +16,11 @@ Rails.application.routes.draw do
   resources :documents, :only => [:show, :index, :new, :create, :destroy] do
     resources :slides, :only => [:show], param: :number do
       resources :comments, :only => :create
+      resources :likes, :only => :create
+      
     end
     resources :comments, :only => :create
+    resources :likes, :only => :create
   end
 
   get 'users/new'
