@@ -1,23 +1,24 @@
 <div class="signup-container">
   <h2> Join Slyde </h2>
   <%= form_for :user, :url => users_create_path do |f| %>
-    <div class="textbox">
-      <%= f.text_field :name, required: true, placeholder: "Enter Your Name" %>
+    <div>
+      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Enter Your Name" %>
     </div>
-    <div class="textbox">
-      <%= f.text_field :email, required: true, placeholder: "Enter Your Email" %>
+    <div>
+      <%= f.text_field :email, class: "textbox", required: true, placeholder: "Enter Your Email" %>
     </div>
-    <div class="textbox">
-      <%= f.password_field :password, required: true, placeholder: "Set Your Password" %>
+    <div>
+      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Set Your Password" %>
     </div>
-    <div class="radioButton">
+    <div class="radiobutton">
       <span><%= f.radio_button :gender, 'Male' ,required: true%> Male</span>
       <span><%= f.radio_button :gender, 'Female' %> Female</span>
     </div>
-    <div>
+    <div class="numericbox">
       <%= f.number_field :age, in: 1..100, step: 1 ,placeholder: "Age", required: true%>
     </div>
-    <div class="actions">
+    <br>
+    <div class="submit">
       <%= f.submit "Sign Up for Slyde" %>
     </div>
   <% end %>
