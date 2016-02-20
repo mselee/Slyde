@@ -21,37 +21,54 @@ body {
   margin: 0;
   padding: 0;
 }
+p {
+  font-family: "Nixie One";
+}
+input {
+  font-family: "Nixie One";
+}
 .header {
-    padding: 1em 2.5em 1.7em 2.5em;
+    padding: 1em 2.5em 0.5em 2.5em;
     color: #fff;
     border-bottom: 5px #411606;
     border-bottom-style: double;
     background: rgba(0,0,0,0.4);
+    font-size: 19px;
     /*background: linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
     background: -o-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
     background: -moz-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
     background: -webkit-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);*/
 }
-.header a {
-  color: inherit;
-	text-decoration: none;
-	padding: 8px;
-	background: rgba(0, 0, 0, 0.25);
-	border-radius: 2px;
+.header img {
+  vertical-align: middle;
 }
+#logout {
+  font-size: 14px;
+  text-decoration: inherit;
+  color: buttontext;
+  padding: 8px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 1px;
+  border-radius: 4px;
+  background: #EF7E38;
+  border-radius: 4px;
+}
+/*
 .header a:hover {
   background: rgba(0, 0, 0, 0.4);
-}
+}*/
 .header input {
   font-size: 14px;
   padding: 8px;
   margin-right: 4px;
+  vertical-align: middle;
   border: 1px;
   border-radius: 4px;
 }
 .header input[type=submit] {
-  background: #F18544;
-  border-radius: 20px;
+  background: #EF7E38;
+  border-radius: 4px;
 
 }
 .card-container {
