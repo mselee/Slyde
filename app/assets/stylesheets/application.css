@@ -27,6 +27,7 @@ body {
     border-bottom: 5px #411606;
     border-bottom-style: double;
     background: rgba(0,0,0,0.4);
+    font-size: 19px;
     /*background: linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
     background: -o-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
     background: -moz-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
@@ -35,13 +36,19 @@ body {
 .header img {
   vertical-align: middle;
 }
-/*.header a {
-  color: inherit;
-	text-decoration: none;
-	padding: 8px;
-	background: rgba(0, 0, 0, 0.25);
-	border-radius: 2px;
+#logout {
+  font-size: 14px;
+  text-decoration: inherit;
+  color: buttontext;
+  padding: 8px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 1px;
+  border-radius: 4px;
+  background: #EF7E38;
+  border-radius: 4px;
 }
+/*
 .header a:hover {
   background: rgba(0, 0, 0, 0.4);
 }*/
