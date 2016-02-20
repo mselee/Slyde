@@ -22,7 +22,7 @@ body {
   padding: 0;
 }
 .header {
-    padding: 1em 2.5em 1.7em 2.5em;
+    padding: 1em 2.5em 0.5em 2.5em;
     color: #fff;
     border-bottom: 5px #411606;
     border-bottom-style: double;
@@ -32,7 +32,10 @@ body {
     background: -moz-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
     background: -webkit-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);*/
 }
-.header a {
+.header img {
+  width: 70px;
+}
+/*.header a {
   color: inherit;
 	text-decoration: none;
 	padding: 8px;
@@ -41,7 +44,7 @@ body {
 }
 .header a:hover {
   background: rgba(0, 0, 0, 0.4);
-}
+}*/
 .header input {
   font-size: 14px;
   padding: 8px;
