@@ -88,3 +88,28 @@ html {
     border: 1px #EF7E38;
     border-radius: 5px;
 }
+
+.success {
+    position: relative;
+    display: inline-block;
+    margin: 9% auto;
+    padding: 1em;
+    background: rgba(0,0,0,.4);
+    border: 4px double;
+    border-radius: 20px;
+    border-color: black;
+    font-size: 24px;
+    color: #fff;
+}
+
+.success a {
+    color: orange;
+}
+
+.success p {
+    margin: auto;
+}
+
+.success p img {
+    vertical-align: middle;
+}
