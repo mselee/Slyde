@@ -4,7 +4,7 @@
 	  <%= f.submit "Unlike" %>
 	<% end %>
 <% else %>
-	<%= form_for :Like, :url => "likes" do |f| %>
+	<%= form_for :Like, method: :post, :url => "likes" do |f| %>
 	  <%= f.submit "Like" %>
 	<% end %>
 <% end %>

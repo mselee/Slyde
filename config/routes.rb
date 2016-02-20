@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'likes/create'
+  post 'likes/create'
   delete 'likes/destroy'  => "likes#destroy"
 
   get 'files/images'
