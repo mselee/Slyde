@@ -1,7 +1,8 @@
 <div class="title"><%= @document.name %> - <%= @document.slides.count %>  Slides</div>
 
 <div class="card-container">
-	<% @document.slides.each_with_index do |slide, index| %>
+	
+  <% @document.slides.each_with_index do |slide, index| %>
 		<%= render :partial => "partials/card" , locals: { :background => "/uploads/#{@document.id}/thumbnails/#{slide.file_path}", :url =>  document_slide_path(@document.id, index + 1), :title =>  index + 1 } %>
 	<% end %>
 </div>

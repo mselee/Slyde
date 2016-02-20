@@ -1,6 +1,6 @@
-<% if Like.find_by(user_id: current_user.id)%>
+<% if like = Like.find_by(user_id: current_user.id, likable_id: likable.id)%>
 	<!-- < % like = Like.find_by(user_id: current_user.id)%> -->
-	<%= form_for :Like, method: :delete, :url => likes_destroy_path do |f| %>
+	<%= form_for :Like, method: :delete, :url => "likes/#{like.id}" do |f| %>
 	  <%= f.submit "Unlike" %>
 	<% end %>
 <% else %>

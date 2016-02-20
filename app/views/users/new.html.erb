@@ -1,14 +1,17 @@
+<div class="logo">
+  <%= image_tag "logo-large.png" %>
+</div>
 <div class="signup-container">
-  <h2> Join Slyde </h2>
+  <div class="title"> Join <%= image_tag "logo-colour-small.png" %> :</div>
   <%= form_for :user, :url => users_create_path do |f| %>
     <div>
-      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Enter Your Full Name" %>
+      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Full Name" %>
     </div>
     <div>
-      <%= f.text_field :email, class: "textbox", required: true, placeholder: "Enter Your Email" %>
+      <%= f.text_field :email, class: "textbox", required: true, placeholder: "Email" %>
     </div>
     <div>
-      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Create Your Password" %>
+      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Password" %>
     </div>
     <div class="radiobutton">
       <span><%= f.radio_button :gender, 'Male' ,required: true%> Male</span>
