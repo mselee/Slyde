@@ -21,6 +21,12 @@ body {
   margin: 0;
   padding: 0;
 }
+p {
+  font-family: "Nixie One";
+}
+input {
+  font-family: "Nixie One";
+}
 .header {
     padding: 1em 2.5em 0.5em 2.5em;
     color: #fff;
