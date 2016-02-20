@@ -33,7 +33,7 @@ body {
     background: -webkit-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);*/
 }
 .header img {
-  width: 70px;
+  vertical-align: middle;
 }
 /*.header a {
   color: inherit;
@@ -49,12 +49,13 @@ body {
   font-size: 14px;
   padding: 8px;
   margin-right: 4px;
+  vertical-align: middle;
   border: 1px;
   border-radius: 4px;
 }
 .header input[type=submit] {
-  background: #F18544;
-  border-radius: 20px;
+  background: #EF7E38;
+  border-radius: 4px;
 
 }
 .card-container {

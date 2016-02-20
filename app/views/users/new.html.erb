@@ -1,8 +1,8 @@
 <div class="logo">
-  <%= image_tag "logo_large.png" %>
+  <%= image_tag "logo-large.png" %>
 </div>
 <div class="signup-container">
-  <div class="title"> Join <%= image_tag "logo_small.png" %> :</div>
+  <div class="title"> Join <%= image_tag "logo-colour-small.png" %> :</div>
   <%= form_for :user, :url => users_create_path do |f| %>
     <div>
       <%= f.text_field :name, class: "textbox", required: true, placeholder: "Full Name" %>
