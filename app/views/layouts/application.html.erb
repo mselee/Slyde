@@ -17,9 +17,9 @@
           <%= link_to "Logout", logout_path, method: :delete %>
     <% else %>
         <%= form_for(:user, url: sessions_path) do |f| %>
-          <span><%= f.text_field :email, required: true, placeholder: "Enter your Email address" %></span>
-          <span><%= f.password_field :password, required: true, placeholder: "Enter your Password" %></span>
-          <%= f.submit("Log in") %>
+          <span><%= f.text_field :email, required: true, placeholder: "Email" %></span>
+          <span><%= f.password_field :password, required: true, placeholder: "Password" %></span>
+          <%= f.submit("Login") %>
         <% end %>
     <% end %>
   </div>
