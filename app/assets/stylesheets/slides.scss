@@ -1,3 +1,66 @@
 // Place all the styles related to the slides controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slides-show {
+background-color: white;
+}
+
+.slide-container{
+    float:left;
+	border-radius:25px;
+	border:solid;
+	border-color:#d35400;
+    margin-left:50px;
+    margin-right:50px;
+    width:400;
+    display:inline-block;
+ }
+
+.prev-slide{
+ margin-top:20px;
+ display:inline-block;
+		}
+
+.next-slide{
+margin-top:20px;
+ display:inline-block;
+		}
+
+
+.box{
+   	  background-color :  #EEE8AA;
+    
+	width:350px;
+    background-size:cover;
+    height:400px;
+    padding:20px;
+    border-radius:25px;
+    display:inline-block;   
+
+}
+
+.comments{
+   
+    position:realtive;
+    border-radius:25px;
+	display:inline-block;
+
+}
+
+.likes{
+
+    	width:300px;
+      	display:inline-block;
+      	float:left;   
+
+}
+
+
+.link{
+ margin-top:10px;
+ display:block;
+ margin-left:50px;
+ padding-bottom:40px
+
+ 	}
