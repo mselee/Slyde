@@ -1,10 +1,11 @@
 <% if Like.find_by(user_id: current_user.id)%>
 	<!-- < % like = Like.find_by(user_id: current_user.id)%> -->
 	<%= form_for :Like, method: :delete, :url => likes_destroy_path do |f| %>
-	  <%= f.submit "Unlike" %>
+	  <%= f.submit "", class: "unlike" %>
 	<% end %>
 <% else %>
 	<%= form_for :Like, :url => "likes" do |f| %>
-	  <%= f.submit "Like" %>
+	  <%= f.submit"", class: "like" %>
+
 	<% end %>
 <% end %>
