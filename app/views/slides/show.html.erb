@@ -1,16 +1,28 @@
-<h3>Slide <%= params[:number] %></h3>
-<%= link_to "#{@document.name}", document_path(params[:document_id])%>
-</br>
-<%= image_tag "/uploads/#{@document.id}/#{@slide.file_path}" %>
-<br>
+<div class ="slides-show">
+  <h3 style="margin-left:350px;padding-top:20px">Slide <%= params[:number] %></h3>
+   <div class="first-row">
+	  	<%= image_tag "/uploads/#{@document.id}/#{@slide.file_path}", class: "slide-container" %>
+	   <br>
+	   <div class="box">
+	     <div class= "likes">
+			<%= render :partial => 'likes/list', :locals => { :likable => @slide } ,class: "slide-likes" %>
+		</div>
+		<div class= "comments">
+			<%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>
+		</div>	
+	  </div>
+	</div>
+	<div class="sec-row">
+		 <% if @prev_slide %>
+	     <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide" %>
+		<% end %>
 
-<% if @prev_slide %>
-    <%= link_to "prev", document_slide_path(params[:document_id], @index - 1) %>
-<% end %>
+		<% if @next_slide %>
+	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide" %>
+		<% end %>
+		<%=link_to "Back to document", document_path(params[:document_id]), class: "link"%>
+	    </br>
+    </div>
 
-<% if @next_slide %>
-    <%= link_to "next", document_slide_path(params[:document_id], @index + 1) %>
-<% end %>
-
-<%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>
-<%= render :partial => 'likes/list', :locals => { :likable => @slide } %>
+	
+</div>
