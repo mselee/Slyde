@@ -5,10 +5,6 @@ class DocumentsController < ApplicationController
     @documents = Document.all
   end
 
-  def new
-    @document = Document.new
-  end
-
   def show
   	@document = Document.find(params[:id])
     @isLiked = !(Like.find_by(user_id: current_user.id, likable_id: @document.id))
@@ -29,12 +25,12 @@ class DocumentsController < ApplicationController
         im = Magick::Image.read("public/uploads/#{@document.id}/#{@document.name}")
 
             for i in 1..count
-              im[i-1].write("public/uploads/#{@document.id}/#{document_name}"+"_#{i}"+ ".png") 
+              im[i-1].write("public/uploads/#{@document.id}/#{document_name}"+"_#{i}"+ ".png")
               im[i-1] = im[i-1].thumbnail(240,240)
-              
 
-              Dir.mkdir("public/uploads/#{@document.id}/thumbnails")unless File.exists?("public/uploads/#{@document.id}/thumbnails")  
-              im[i-1].write("public/uploads/#{@document.id}/thumbnails/#{document_name}_"+"#{i}"+".png")    
+
+              Dir.mkdir("public/uploads/#{@document.id}/thumbnails")unless File.exists?("public/uploads/#{@document.id}/thumbnails")
+              im[i-1].write("public/uploads/#{@document.id}/thumbnails/#{document_name}_"+"#{i}"+".png")
               @slide = Slide.create!(params.require(:document).permit(:document_id).merge(:document_id=>@document.id,:number=>i,:file_path=>"#{document_name}_"+"#{i}"+".png"))
 
             end

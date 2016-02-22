@@ -1,25 +1,9 @@
 <div class="title"><%= @document.name %> - <%= @document.slides.count %>  Slides</div>
 
 <div class="card-container">
-	
   <% @document.slides.each_with_index do |slide, index| %>
 		<%= render :partial => "partials/card" , locals: { :background => "/uploads/#{@document.id}/thumbnails/#{slide.file_path}", :url =>  document_slide_path(@document.id, index + 1), :title =>  index + 1 } %>
 	<% end %>
-</div>
-<div class="header">
-  <%= link_to "Home", documents_path %>
-  <div style="float:right">
-    <% if logged_in? %>
-          <span>Logged in as <%= current_user.name %></span>
-          <%= link_to "Logout", logout_path, method: :delete %>
-    <% else %>
-        <%= form_for(:user, url: sessions_path) do |f| %>
-          <span><%= f.text_field :email, required: true, placeholder: "Enter your Email address" %></span>
-          <span><%= f.password_field :password, required: true, placeholder: "Enter your Password" %></span>
-          <%= f.submit("Log in") %>
-        <% end %>
-    <% end %>
-  </div>
 </div>
  <div class="box">
    <div class= "likes">
