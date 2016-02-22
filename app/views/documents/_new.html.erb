@@ -1,4 +1,5 @@
-<%= form_for(@document) do |f| %>
+<%= form_for (@document =  Document.new) do |f| %>
+  <div class="plus">+</div>
   <% if @document.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
@@ -12,10 +13,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :file_path %><br>
     <%= f.file_field :file_path %>
   </div>
-  <div class="actions">
+  <div class="actions" style="display:none">
     <%= f.submit %>
   </div>
 <% end %>

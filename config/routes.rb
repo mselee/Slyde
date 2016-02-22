@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  get 'files/images'
 
   root :to => 'users#new'
-  
+
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   delete 'logout' => "sessions#destroy", as: "logout"
 
 
-  resources :documents, :only => [:show, :index, :new, :create, :destroy] do
+  resources :documents, :only => [:show, :index, :create, :destroy] do
     resources :slides, :only => [:show], param: :number do
       resources :comments, :only => :create
       resources :likes, :only => [:create, :destroy]
-      
+
     end
     resources :comments, :only => :create
     resources :likes, :only => [:create, :destroy]
