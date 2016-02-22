@@ -151,6 +151,7 @@ input {
   font-size: 10em;
   font-family: "Nunito";
   transform: translate(-50%, -50%);
+  margin-top: -1rem;
 }
 .card div {
   position: absolute;
