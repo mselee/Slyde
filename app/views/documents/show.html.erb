@@ -5,6 +5,13 @@
 		<%= render :partial => "partials/card" , locals: { :background => "/uploads/#{@document.id}/thumbnails/#{slide.file_path}", :url =>  document_slide_path(@document.id, index + 1), :title =>  index + 1 } %>
 	<% end %>
 </div>
+ <div class="box">
+   <div class= "likes">
+   <%= render :partial => 'likes/list', :locals => { :likable => @document } %>
 
-<%= render :partial => 'comments/list', :locals => { :commentable => @document } %>
-<%= render :partial => 'likes/list', :locals => { :likable => @document } %>
+  </div>
+  <div class= "comments">
+
+    <%= render :partial => 'comments/list', :locals => { :commentable => @document } %>
+ </div>
+</div>

@@ -7,15 +7,15 @@
 	    <% if !@prev_slide %>
           <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide", :style => "visibility: hidden"%>
  		<% else %>
- 		  <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide" %>
+ 		  <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide", id:"prev" %>
 		<% end %>
 
 
 		<% if !@next_slide %>
 	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide", :style => "visibility: hidden" %>
 	    <% else %>
-	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide" %>
-	
+	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide", id:"next" %>
+
 		<% end %>
 	</div>
   	  <h3 style="text-align:center;padding-top:20px"><%= params[:number] %> / <%=@document.slides.count %> </h3>
@@ -27,8 +27,8 @@
 		</div>
 		<div class= "comments">
 			<%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>
-		</div>	
+		</div>
 	  </div>
 
-	
+
 </div>
