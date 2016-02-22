@@ -1,3 +1,32 @@
 // Place all the styles related to the documents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.box{
+    margin-top:5px;
+    width:100%;
+    background-size:cover;
+    padding:20px;
+    display:block;
+    text-align: center; 
+
+}
+
+.comments{
+   background-color: white;
+   width: 60%;
+   text-align: left;
+   margin-left: 20%;
+   padding: 14px;
+    border-radius:10px;     
+    border:solid;
+    border-color:#d35400;
+    padding-bottom: 38px;  
+
+
+
+}
+
+.likes{
+
+
+}

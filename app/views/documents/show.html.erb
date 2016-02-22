@@ -21,7 +21,13 @@
     <% end %>
   </div>
 </div>
+ <div class="box">
+   <div class= "likes">
+   <%= render :partial => 'likes/list', :locals => { :likable => @document } %>
 
+  </div>
+  <div class= "comments">
 
-<%= render :partial => 'comments/list', :locals => { :commentable => @document } %>
-<%= render :partial => 'likes/list', :locals => { :likable => @document } %>
+    <%= render :partial => 'comments/list', :locals => { :commentable => @document } %>
+ </div>
+</div>
