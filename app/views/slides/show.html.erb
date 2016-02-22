@@ -1,4 +1,7 @@
 <div class ="slides-show">
+    <%=link_to "Back to document", document_path(params[:document_id]), class: "link"%>
+	 </br>
+
    <div class="slide-container">
 	  	<%= image_tag "/uploads/#{@document.id}/#{@slide.file_path}", class: "slide" %>
 	    <% if !@prev_slide %>
@@ -18,19 +21,14 @@
   	  <h3 style="text-align:center;padding-top:20px"><%= params[:number] %> / <%=@document.slides.count %> </h3>
 
 	   <br>
-	   <div class="box">
-	     <div class= "likes">
+	  <div class="box">
+	    <div class= "likes">
 			<%= render :partial => 'likes/list', :locals => { :likable => @slide } ,class: "slide-likes" %>
 		</div>
 		<div class= "comments">
 			<%= render :partial => 'comments/list', :locals => { :commentable => @slide } %>
 		</div>	
 	  </div>
-	<div class="sec-row">
-		 
-		<%=link_to "Back to document", document_path(params[:document_id]), class: "link"%>
-	    </br>
-    </div>
 
 	
 </div>
