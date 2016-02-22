@@ -21,7 +21,7 @@
 
 .signup-container {
     position: relative;
-    top: 10em;
+    top: 14em;
     left: 40em;
 
     font-size: 18px;
@@ -36,14 +36,14 @@
     border-radius: 1.3em;
 }
 
-.signup-container .title {
+.signup-container .signup-prompt {
     font-size: 30px;
     color: #380F02;
     margin-left: 0.5em;
     padding: 0.3em;
 }
 
-.signup-container .title img {
+.signup-container .signup-prompt img {
     vertical-align: middle;
 }
 
