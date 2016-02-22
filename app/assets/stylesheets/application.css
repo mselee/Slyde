@@ -14,12 +14,22 @@
  *= require_self
  */
 
+/*::-webkit-scrollbar {
+    display: none;
+}*/
+
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
   padding: 0;
+}
+.yield {
+  position: absolute;
+	top: 5.5em;
+  bottom: 0;
+	overflow: auto;
 }
 p {
   font-family: "Nixie One";
@@ -28,16 +38,21 @@ input {
   font-family: "Nixie One";
 }
 .header {
-    padding: 1em 2.5em 0.5em 2.5em;
-    color: #fff;
-    border-bottom: 5px #411606;
-    border-bottom-style: double;
-    background: rgba(0,0,0,0.4);
-    font-size: 19px;
-    /*background: linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
-    background: -o-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
-    background: -moz-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
-    background: -webkit-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  padding: 1em 2.5em 0.5em 2.5em;
+  color: #fff;
+  border-bottom: 5px #411606;
+  border-bottom-style: double;
+  background: rgba(0,0,0,0.4);
+  font-size: 19px;
+  /*background: linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
+  background: -o-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
+  background: -moz-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);
+  background: -webkit-linear-gradient(to right, #F18544,#D95B32,#D5542D, #BD2412);*/
 }
 .header img {
   vertical-align: middle;
@@ -73,6 +88,8 @@ input {
 }
 .card-container {
   text-align: center;
+  /*overflow: auto;*/
+  /*height: 100%;*/
 }
 .card {
   position: relative;
@@ -81,7 +98,7 @@ input {
   width: 15em;
   height: 15em;
   display: inline-block;
-  margin: 5px;
+  margin: 1.5em 3em;
   color: #fff;
   background-color: #fff;
   background-position: center center;
