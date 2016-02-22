@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # get 'likes/create'
-  # delete 'likes/destroy'  => "likes#destroy"
+   get 'likes/create'
+   delete 'likes/destroy'  => "likes#destroy"
 
-  get 'files/images'
+ get 'files/images'
 
   root :to => 'users#new'
   
