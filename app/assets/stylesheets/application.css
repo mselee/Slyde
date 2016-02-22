@@ -32,6 +32,8 @@ body, html{
 .yield {
   position: absolute;
 	top: 5.5em;
+  left: 0;
+  right: 0;
   bottom: 0;
 	overflow: auto;
 }
@@ -100,7 +102,7 @@ input {
 .card {
   position: relative;
   /*box-shadow: 0 0 1px rgba(0, 0, 0, 0.48);*/
-  box-shadow: 0 0 0 2px rgba(0,0,0,.5);
+  /*box-shadow: 0 0 0 2px rgba(0,0,0,.5);*/
   overflow: hidden;
   width: 15em;
   height: 15em;
