@@ -1,28 +1,30 @@
-<div class="logo">
-  <%= image_tag "logo-large.png" %>
-</div>
-<div class="signup-container">
-  <div class="title"> Join <%= image_tag "logo-colour-small.png" %> :</div>
-  <%= form_for :user, :url => users_create_path do |f| %>
-    <div>
-      <%= f.text_field :name, class: "textbox", required: true, placeholder: "Full Name" %>
-    </div>
-    <div>
-      <%= f.text_field :email, class: "textbox", required: true, placeholder: "Email" %>
-    </div>
-    <div>
-      <%= f.password_field :password, class: "textbox", required: true, placeholder: "Password" %>
-    </div>
-    <div class="radiobutton">
-      <span><%= f.radio_button :gender, 'Male' ,required: true%> Male</span>
-      <span><%= f.radio_button :gender, 'Female' %> Female</span>
-    </div>
-    <div class="numericbox">
-      <%= f.number_field :age, in: 1..100, step: 1 ,placeholder: "Enter Your Age", required: true%>
-    </div>
-    <br>
-    <div class="submit">
-      <%= f.submit "Sign Up for Slyde" %>
-    </div>
-  <% end %>
+<div class="container">
+  <div class="logo">
+    <%= image_tag "logo-large.png" %>
+  </div>
+  <div class="signup-container">
+    <div class="title"> Join <%= image_tag "logo-colour-small.png" %> :</div>
+    <%= form_for :user, :url => users_create_path do |f| %>
+      <div>
+        <%= f.text_field :name, class: "textbox", required: true, placeholder: "Full Name" %>
+      </div>
+      <div>
+        <%= f.text_field :email, class: "textbox", required: true, placeholder: "Email" %>
+      </div>
+      <div>
+        <%= f.password_field :password, class: "textbox", required: true, placeholder: "Password" %>
+      </div>
+      <div class="radiobutton">
+        <span><%= f.radio_button :gender, 'Male' ,required: true%> Male</span>
+        <span><%= f.radio_button :gender, 'Female' %> Female</span>
+      </div>
+      <div class="numericbox">
+        <%= f.number_field :age, in: 1..100, step: 1 ,placeholder: "Enter Your Age", required: true%>
+      </div>
+      <br>
+      <div class="submit">
+        <%= f.submit "Sign Up for Slyde" %>
+      </div>
+    <% end %>
+  </div>
 </div>
