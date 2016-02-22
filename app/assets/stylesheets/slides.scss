@@ -3,64 +3,76 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .slides-show {
-background-color: white;
+text-align:center;
 }
 
 .slide-container{
-    float:left;
-	border-radius:25px;
-	border:solid;
-	border-color:#d35400;
-    margin-left:50px;
-    margin-right:50px;
-    width:400;
-    display:inline-block;
- }
+    margin:0px;
+text-align:center;
+}
+
+.slide{
+    margin-top:20px;
+    border-radius:25px;     
+    border:solid;
+    border-color:#d35400;
+    display:inline;
+    background-color: white;
+} 
 
 .prev-slide{
- margin-top:20px;
- display:inline-block;
+ margin-top:25%;
+  margin-left:60px;
+display:inline;
+float:left;
+
 		}
 
 .next-slide{
-margin-top:20px;
- display:inline-block;
+margin-top:25%;
+margin-right: 60px;
+display:inline;
+float:right;
 		}
 
 
 .box{
-   	  background-color :  #EEE8AA;
-    
-	width:350px;
+    margin-top:5px;
+    width:100%;
     background-size:cover;
-    height:400px;
     padding:20px;
-    border-radius:25px;
-    display:inline-block;   
+    display:block;
+    text-align: center; 
 
 }
 
 .comments{
-   
-    position:realtive;
-    border-radius:25px;
-	display:inline-block;
+   background-color: white;
+   width: 60%;
+   text-align: left;
+   margin-left: 20%;
+   padding: 14px;
+    border-radius:10px;     
+    border:solid;
+    border-color:#d35400;
+    padding-bottom: 38px;  
+
+
 
 }
 
 .likes{
 
-    	width:300px;
-      	display:inline-block;
-      	float:left;   
 
 }
 
 
 .link{
- margin-top:10px;
+ margin-top:20px;
  display:block;
- margin-left:50px;
- padding-bottom:40px
-
+ text-align: center;
+ text-decoration: none;
+ font-family: 'Nixie One';
+ font-size: 20px;
+ font-weight: 100;
  	}
