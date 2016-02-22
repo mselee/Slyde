@@ -7,5 +7,22 @@
 }
 
 .comment-text-box{
-width: 85%;
-float:left;}
+// width: 85%;
+// float:left;
+	outline: none;
+	border: none;
+	resize: none;
+	/* background: rgba(0,0,0,.3); */
+	width: 80%;
+	left: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+input[type=submit] {
+	display: none;
+}
+
+p {
+	white-space: pre-line;
+}
