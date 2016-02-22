@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def new
   	if logged_in?
-  		if params[:from] = "signup"
+  		if params[:from] == "signup"
   			render "create"
   		else
 	  		redirect_to '/documents'
