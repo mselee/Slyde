@@ -17,9 +17,13 @@
 * {
   box-sizing: border-box;
 }
-body {
+body, html{
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+
+  background: radial-gradient(circle,#FFF1DD,rgba(255, 164, 0, 0.81),rgb(239, 126, 56));
 }
 p {
   font-family: "Nixie One";
@@ -27,6 +31,8 @@ p {
 input {
   font-family: "Nixie One";
 }
+
+
 .header {
     padding: 1em 2.5em 0.5em 2.5em;
     color: #fff;
