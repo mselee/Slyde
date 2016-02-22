@@ -1,7 +1,7 @@
 <div class="title"><%= @documents.count %> Documents</div>
 
 <div class="card-container">
-	<%=link_to image_tag('image/plus.png') +"add new document", "/documents/new" , class: "card" %>	
+	<%= render :partial => "documents/new" %>
 	<% @documents.each do |document|%>
 		<%= render :partial => "partials/card" , locals: { :background => "/uploads/#{document.id}/thumbnails/#{document.slides.first.file_path}", :url =>  document_path(document.id), :title =>  document.name} %>
 	<%end%>
