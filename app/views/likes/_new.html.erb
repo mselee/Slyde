@@ -1,10 +1,10 @@
 <% if like = Like.find_by(user_id: current_user.id, likable_id: likable.id)%>
 	<!-- < % like = Like.find_by(user_id: current_user.id)%> -->
 	<%= form_for :Like, method: :delete, :url => "likes/#{like.id}" do |f| %>
-	  <%= f.submit "", class: "unlike" %>
+ 	 <%= image_submit_tag("unlike.png",class: "unlike") %>	
 	<% end %>
 <% else %>
 	<%= form_for :Like, :url => "likes" do |f| %>
-	  <%= f.submit"", class: "like" %>
-	<% end %>
+  <%= image_submit_tag("like1.png",class: "like") %>	
+    <% end %>
 <% end %>

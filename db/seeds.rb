@@ -18,6 +18,7 @@ User.create! [
 
 user = User.create(name: "seleem", email: "seleem", password: "seleem", age: 0, gender: "Male")
 user = User.create(name: "ezz", email: "ezz", password: "ezz", age: 0, gender: "Male")
+user = User.create(name: "mido", email: "mido", password: "mido", age: 0, gender: "Male")
 
 =begin
 doc = Document.create(name: "doc1", file_path: "doc_path", user_id: user.id)

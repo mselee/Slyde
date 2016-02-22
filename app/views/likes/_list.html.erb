@@ -1,6 +1,6 @@
 <div class="like-container">
 	<%= render :partial => "likes/new" , locals: { :likable => likable }, class: "button" %>
-	<h4><%= likable.likes.count %> people like this.</h4>
+	<h4 class="like-header"><%= likable.likes.count %> people like this.</h4>
 	
 </div>
 <%# render :partial => "likes/like", :collection => @likes %>

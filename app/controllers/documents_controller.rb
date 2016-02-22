@@ -25,6 +25,7 @@ class DocumentsController < ApplicationController
         count=reader.page_count
         document_path = "public/uploads/#{@document.id}/#{@document.name}"
         document_name = File.basename(document_path,File.extname(document_path))
+        
         im = Magick::Image.read("public/uploads/#{@document.id}/#{@document.name}")
 
             for i in 1..count
