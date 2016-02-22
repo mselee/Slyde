@@ -1,9 +1,22 @@
 <div class ="slides-show">
-  <h3 style="margin-left:350px;padding-top:20px">Slide <%= params[:number] %></h3>
    <div class="slide-container">
-	  	<%= image_tag "/uploads/#{@document.id}/#{@slide.file_path}" %>
+	  	<%= image_tag "/uploads/#{@document.id}/#{@slide.file_path}", class: "slide" %>
+	    <% if !@prev_slide %>
+          <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide", :style => "visibility: hidden"%>
+ 		<% else %>
+ 		  <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide" %>
+		<% end %>
+
+
+		<% if !@next_slide %>
+	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide", :style => "visibility: hidden" %>
+	    <% else %>
+	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide" %>
+	
+		<% end %>
 	</div>
-  	
+  	  <h3 style="text-align:center;padding-top:20px"><%= params[:number] %> / <%=@document.slides.count %> </h3>
+
 	   <br>
 	   <div class="box">
 	     <div class= "likes">
@@ -14,13 +27,7 @@
 		</div>	
 	  </div>
 	<div class="sec-row">
-		 <% if @prev_slide %>
-	     <%= link_to image_tag('prev.png'), document_slide_path(params[:document_id], @index - 1), class: "prev-slide" %>
-		<% end %>
-
-		<% if @next_slide %>
-	    	<%= link_to image_tag('next.png'), document_slide_path(params[:document_id], @index + 1), class: "next-slide" %>
-		<% end %>
+		 
 		<%=link_to "Back to document", document_path(params[:document_id]), class: "link"%>
 	    </br>
     </div>

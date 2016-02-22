@@ -4,25 +4,35 @@
 
 .slides-show {
 background-color: white;
+text-align:center;
 }
 
 .slide-container{
-    text-align:center;
-	border-radius:25px;
-	border:solid;
-	border-color:#d35400;
-    
- }
+    margin:0px;
+text-align:center;
+}
 
- 
+.slide{
+    margin-top:20px;
+    border-radius:25px;     
+    border:solid;
+    border-color:#d35400;
+    display:inline;
+} 
+
 .prev-slide{
- margin-top:720px;
- display:block;
+ margin-top:25%;
+  margin-left:60px;
+display:inline;
+float:left;
+
 		}
 
 .next-slide{
-margin-top:720px;
- display:block;
+margin-top:25%;
+margin-right: 60px;
+display:inline;
+float:right;
 		}
 
 
