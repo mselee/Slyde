@@ -1,3 +1,3 @@
-<h4><%= commentable.comments.count %> comments</h4>
+
 <%= render :partial => "comments/comment", :collection => commentable.comments %>
 <%= render :partial => "comments/new" , locals: { :commentable => commentable } %>

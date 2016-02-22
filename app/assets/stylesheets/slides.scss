@@ -37,30 +37,32 @@ float:right;
 
 
 .box{
-   	  background-color :  #EEE8AA;
-    margin-top:800px;
-    	width:350px;
+    margin-top:5px;
+    width:100%;
     background-size:cover;
-    height:400px;
     padding:20px;
-    border-radius:25px;
-    display:block;   
+    display:block;
+    text-align: center; 
 
 }
 
 .comments{
-   
-    position:realtive;
-    border-radius:25px;
-	display:block;
+   background-color: white;
+   width: 60%;
+   text-align: left;
+   margin-left: 20%;
+   padding: 14px;
+    border-radius:10px;     
+    border:solid;
+    border-color:#d35400;
+    padding-bottom: 38px;  
+
+
 
 }
 
 .likes{
 
-    	width:300px;
-      	display:block;
-      	float:left;   
 
 }
 
@@ -69,5 +71,8 @@ float:right;
  margin-top:20px;
  display:block;
  text-align: center;
-
+ text-decoration: none;
+ font-family: 'Nixie One';
+ font-size: 20px;
+ font-weight: 100;
  	}
